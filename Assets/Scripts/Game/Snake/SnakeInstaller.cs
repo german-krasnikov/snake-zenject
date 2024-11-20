@@ -1,13 +1,13 @@
+using Modules;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace SampleGame
 {
-    public sealed class PlayerInstaller : MonoInstaller
+    public sealed class SnakeInstaller : MonoInstaller
     {
-        //[SerializeField]
-        //private Character _characterPrefab;
+        [SerializeField]
+        private Snake _snake;
 
         [SerializeField]
         private InputMap _inputMap;
@@ -21,6 +21,8 @@ namespace SampleGame
         {
             Container.Bind<InputMap>().FromInstance(_inputMap).AsSingle();
             Container.BindInterfacesTo<MoveInput>().AsSingle();
+            Container.Bind<ISnake>().FromInstance(_snake).AsSingle();
+            Container.BindInterfacesTo<SnakeController>().AsSingle();
         }
     }
 }

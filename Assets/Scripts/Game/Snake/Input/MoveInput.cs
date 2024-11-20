@@ -1,4 +1,4 @@
-
+using Modules;
 using UnityEngine;
 
 namespace SampleGame
@@ -14,23 +14,21 @@ namespace SampleGame
             _inputMap = inputMap;
         }
 
-        public Vector3 GetMoveDirection()
+        public SnakeDirection GetMoveDirection()
         {
-            Vector3 direction = Vector3.zero;
             if (!_gameCycle.IsPlaying)
-                return direction;
+                return SnakeDirection.NONE;
 
             if (Input.GetKey(_inputMap.MoveUp))
-                direction.z = 1;
-            else if (Input.GetKey(_inputMap.MoveDown)) 
-                direction.z = -1;
-
+                return SnakeDirection.UP;
+            if (Input.GetKey(_inputMap.MoveDown))
+                return SnakeDirection.DOWN;
             if (Input.GetKey(_inputMap.MoveLeft))
-                direction.x = -1;
-            else if (Input.GetKey(_inputMap.MoveRight)) 
-                direction.x = 1;
+                return SnakeDirection.LEFT;
+            if (Input.GetKey(_inputMap.MoveRight))
+                return SnakeDirection.RIGHT;
 
-            return direction;
+            return SnakeDirection.NONE;
         }
     }
 }
