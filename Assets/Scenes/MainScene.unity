@@ -320,7 +320,6 @@ GameObject:
   - component: {fileID: 351129952}
   - component: {fileID: 351129951}
   - component: {fileID: 351129950}
-  - component: {fileID: 351129953}
   m_Layer: 0
   m_Name: '[SceneContext]'
   m_TagString: Untagged
@@ -340,6 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1cda622787f40c0861abe032450cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _snake: {fileID: 603291647516529739}
+  _inputMap: {fileID: 11400000, guid: f9923bba5a10140c3bb86ec1d5811c41, type: 2}
 --- !u!114 &351129951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +356,6 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 351129950}
-  - {fileID: 351129953}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -388,20 +388,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &351129953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351129949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e57a1af308ea495888ac7ea0fbce904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _snake: {fileID: 603291647516529739}
-  _inputMap: {fileID: 11400000, guid: f9923bba5a10140c3bb86ec1d5811c41, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
