@@ -1,11 +1,19 @@
 using System;
+using Gameplay;
+using UnityEngine;
 using Zenject;
 
 public class GameCycle : IInitializable
 {
+    private ICoinSpawner _coinSpawner;
     public event Action OnWin;
     public event Action OnLose;
     public bool IsPlaying { get; private set; }
+
+    public GameCycle(ICoinSpawner coinSpawner)
+    {
+        _coinSpawner = coinSpawner;
+    }
 
     public void Initialize()
     {
@@ -15,6 +23,7 @@ public class GameCycle : IInitializable
     public void StartGame()
     {
         IsPlaying = true;
+        _coinSpawner.CreateAt(new Vector2Int(0, 0));
     }
 
     public void WinGame()

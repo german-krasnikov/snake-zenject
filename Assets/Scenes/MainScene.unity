@@ -339,8 +339,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1cda622787f40c0861abe032450cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinPrefab: {fileID: 1221131666036007499, guid: f37c023e6b8b06149a4215320dd7e482, type: 3}
   _snake: {fileID: 603291647516529739}
+  _worldBounds: {fileID: 1431199845}
+  _gameUI: {fileID: 1764093826}
   _inputMap: {fileID: 11400000, guid: f9923bba5a10140c3bb86ec1d5811c41, type: 2}
+  _poolTransform: {fileID: 1416699217}
 --- !u!114 &351129951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,6 +1005,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338628983}
   m_CullTransparentMesh: 1
+--- !u!1 &1416699216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416699217}
+  m_Layer: 0
+  m_Name: Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1416699217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416699216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.738542, y: -4.9160566, z: -0.1258103}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428118784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,3 +2028,4 @@ SceneRoots:
   - {fileID: 679975517}
   - {fileID: 1764093825}
   - {fileID: 351129952}
+  - {fileID: 1416699217}
