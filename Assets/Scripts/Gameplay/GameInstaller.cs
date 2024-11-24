@@ -27,15 +27,14 @@ namespace Gameplay
         public override void InstallBindings()
         {
             InstallInput();
+            InstallCoin();
+            InstallUI();
             Container.BindInterfacesTo<Score>().AsSingle();
             Container.BindInterfacesAndSelfTo<ScoreController>().AsSingle();
             Container.BindInterfacesTo<Difficulty>().AsSingle().WithArguments(_maxDifficulty);
             Container.BindInterfacesTo<SnakeController>().AsSingle();
             Container.Bind<ISnake>().FromInstance(_snake).AsSingle();
             Container.Bind<IWorldBounds>().FromInstance(_worldBounds).AsSingle();
-            Container.BindInterfacesTo<CoinController>().AsSingle();
-            CoinInstaller.Install(Container, _coinPrefab, _poolTransform);
-            InstallUI();
             Container.BindInterfacesAndSelfTo<GameCycle>().AsSingle();
         }
 
@@ -43,6 +42,12 @@ namespace Gameplay
         {
             Container.Bind<InputMap>().FromInstance(_inputMap).AsSingle();
             Container.BindInterfacesTo<MoveInput>().AsSingle();
+        }
+
+        private void InstallCoin()
+        {
+            Container.BindInterfacesTo<CoinController>().AsSingle();
+            CoinInstaller.Install(Container, _coinPrefab, _poolTransform);
         }
 
         private void InstallUI()
