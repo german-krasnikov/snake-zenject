@@ -1,5 +1,4 @@
 using System;
-using Gameplay;
 using Modules;
 using Zenject;
 
@@ -8,15 +7,13 @@ public class GameCycle : IInitializable
     public event Action OnStartGame;
     public event Action OnWin;
     public event Action OnLose;
-    
-    private readonly ICoinSpawner _coinSpawner;
+
     private readonly IDifficulty _difficulty;
 
     public bool IsPlaying { get; private set; }
 
-    public GameCycle(ICoinSpawner coinSpawner, IDifficulty difficulty)
+    public GameCycle(IDifficulty difficulty)
     {
-        _coinSpawner = coinSpawner;
         _difficulty = difficulty;
     }
 

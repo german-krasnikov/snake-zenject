@@ -10,6 +10,8 @@ namespace Gameplay
 {
     public class CoinController : IInitializable, IDisposable, ICoinController
     {
+        public event Action<Coin> OnEat;
+
         private readonly ICoinSpawner _coinSpawner;
         private readonly GameCycle _gameCycle;
         private readonly IDifficulty _difficulty;
@@ -49,6 +51,7 @@ namespace Gameplay
             coin = GetCoin(position);
             _coinSpawner.Remove(coin);
             _coins.Remove(coin);
+            OnEat?.Invoke(coin);
             return true;
         }
 
