@@ -5,6 +5,7 @@ namespace Gameplay
 {
     public interface ICoinSpawner
     {
-        ICoin CreateAt(Vector2Int position);
+        Coin CreateAt(Vector2Int position);
+        void Remove(Coin coin);
     }
 }

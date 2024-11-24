@@ -344,6 +344,7 @@ MonoBehaviour:
   _worldBounds: {fileID: 1431199845}
   _gameUI: {fileID: 1764093826}
   _inputMap: {fileID: 11400000, guid: f9923bba5a10140c3bb86ec1d5811c41, type: 2}
+  _maxDifficulty: 9
   _poolTransform: {fileID: 1416699217}
 --- !u!114 &351129951
 MonoBehaviour:

@@ -1,18 +1,23 @@
 using System;
 using Gameplay;
-using UnityEngine;
+using Modules;
 using Zenject;
 
 public class GameCycle : IInitializable
 {
-    private ICoinSpawner _coinSpawner;
+    public event Action OnStartGame;
     public event Action OnWin;
     public event Action OnLose;
+    
+    private readonly ICoinSpawner _coinSpawner;
+    private readonly IDifficulty _difficulty;
+
     public bool IsPlaying { get; private set; }
 
-    public GameCycle(ICoinSpawner coinSpawner)
+    public GameCycle(ICoinSpawner coinSpawner, IDifficulty difficulty)
     {
         _coinSpawner = coinSpawner;
+        _difficulty = difficulty;
     }
 
     public void Initialize()
@@ -23,7 +28,8 @@ public class GameCycle : IInitializable
     public void StartGame()
     {
         IsPlaying = true;
-        _coinSpawner.CreateAt(new Vector2Int(0, 0));
+        _difficulty.Next(out int difficulty);
+        OnStartGame?.Invoke();
     }
 
     public void WinGame()
